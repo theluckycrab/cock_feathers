@@ -1,4 +1,5 @@
 extends KinematicBody
+class_name Controllable
 
 var velocity = Vector3.ZERO
 var turn_speed = 0.04
@@ -7,10 +8,6 @@ var gravity = Vector3.DOWN * 9
 var force = Vector3.ZERO
 
 onready var body = $Armature
-
-func _physics_process(_delta):
-	controls()
-	move()
 
 func move():
 	#movement will always be rotated to your facing, force will not
