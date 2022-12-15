@@ -20,14 +20,18 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Cock Feathers"
-run/main_scene="res://map.tscn"
+config/name="cock_feathers"
+run/main_scene="res://scene_manager.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Events="*res://events.gd"
 Network="*res://network.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=false
 
 [input]
 
