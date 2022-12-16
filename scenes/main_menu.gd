@@ -7,7 +7,7 @@ onready var start_button = $JoinPanel/StartButton
 onready var player_list = $PlayerList
 
 func _ready():
-	Events.connect("player_joined", self, "on_player_joined")
+	var _d = Events.connect("player_joined", self, "on_player_joined")
 	host_button.connect("button_down", self, "on_host_button")
 	join_button.connect("button_down", self, "on_join_button")
 	start_button.connect("button_down", self, "on_start_button")

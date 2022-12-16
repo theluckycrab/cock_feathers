@@ -6,7 +6,7 @@ func _ready():
 	var _d = Events.connect("round_start", self, "set_active", [true])
 
 func _physics_process(_delta):
-	if active:
+	if active and net_owner == get_tree().get_network_unique_id():
 		_controls()
 		move()
 
