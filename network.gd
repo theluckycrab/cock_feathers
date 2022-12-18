@@ -4,6 +4,7 @@ var port = 5555
 var peer = NetworkedMultiplayerENet.new()
 
 func join(host_ip):
+	print("Attempting to join " + host_ip)
 	peer.connect("connection_failed", self, "on_connection_failed")
 	peer.connect("connection_succeeded", self, "on_connection_succeeded")
 	peer.create_client(host_ip, 5555)

@@ -9,6 +9,8 @@
 [sub_resource type="PrismMesh" id=3]
 
 [node name="Player" type="KinematicBody"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -28,4 +30,5 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Camera" type="Camera" parent="Armature"]
-transform = Transform( 1, 0, 0, 0, 0.827277, 0.561795, 0, -0.561795, 0.827277, 0, 4.0684, 8.33584 )
+transform = Transform( 1, 0, 0, 0, 0.96218, 0.272415, 0, -0.272415, 0.96218, 0, 2.60716, 6.79874 )
+far = 500.0

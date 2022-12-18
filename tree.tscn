@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tree.tres" type="ArrayMesh" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.321112, 3.16719, 0.277171 )
+
+[node name="Tree" type="StaticBody"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 2.80411, 0, 0, 0, 2.32026, 0, 0, 0, 2.87551, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3856, 0.0184203 )
+shape = SubResource( 1 )

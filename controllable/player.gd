@@ -1,12 +1,14 @@
 extends Controllable
 class_name Player
 
+var base_move_speed = move_speed
+
 func _ready():
 	var _d = Events.connect("round_start", self, "set_active", [true])
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	_controls()
-	move()
+	move(delta)
 
 
 func _controls():
@@ -14,6 +16,10 @@ func _controls():
 	if active and net_owner == get_tree().get_network_unique_id():
 		if Input.is_action_just_pressed("left_click"):
 			rpc("shoot_arrow")
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.is_action_pressed("shift"):
+		move_speed = base_move_speed * 1.5
 		
 remotesync func shoot_arrow():
 	set_active(false)

@@ -18,7 +18,7 @@ func on_host_button():
 	add_player_label(1)
 	
 func on_join_button():
-	Network.join("127.0.0.1")
+	Network.join(ip_entry.text)
 
 func on_player_joined(who):
 	add_player_label(who)
@@ -32,7 +32,8 @@ func hide_buttons():
 	ip_entry.hide()
 	
 func show_start():
-	start_button.show()
+	if get_tree().get_network_unique_id() == 1:
+		start_button.show()
 
 func add_player_label(who):
 	var l = Label.new()
