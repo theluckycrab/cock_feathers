@@ -7,14 +7,18 @@ var move_speed = 20
 var gravity = Vector3.DOWN * 9
 var force = Vector3.ZERO
 var net_owner = 1
+var active = false
 
 onready var body = $Armature
 
 func move():
 	#movement will always be rotated to your facing, force will not
+	if ! active:
+		velocity = Vector3.ZERO
 	var v = velocity.rotated(Vector3.UP, body.rotation.y) * move_speed
 	var _discard = move_and_slide(v + gravity + force)
-	send_move_data()
+	if active and net_owner == get_tree().get_network_unique_id():
+		send_move_data()
 	
 func get_wasd():
 	var wasd = Vector3.ZERO
@@ -23,8 +27,10 @@ func get_wasd():
 	return wasd
 	
 func controls():
+	if !active or net_owner != get_tree().get_network_unique_id():
+		return
 	var wasd = get_wasd()
-	velocity = Vector3(0, 0, -wasd.z)
+	velocity = Vector3(0, 0, wasd.z)
 	key_turn()
 
 func key_turn():
@@ -43,3 +49,8 @@ remote func sync_move_data(m):
 	global_transform.origin = m.position
 	body.rotation.y = m.rotation
 	pass
+
+func set_active(a):
+	active = a
+	if a and net_owner == get_tree().get_network_unique_id():
+		$Armature/Camera.current = true

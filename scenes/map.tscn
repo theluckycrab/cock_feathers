@@ -9,14 +9,11 @@ extents = Vector3( 20.2861, 1, 18.8272 )
 [node name="Map" type="Spatial"]
 script = ExtResource( 2 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0 )
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.20865 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.5411 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.53306 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.47077 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
 
@@ -41,3 +38,9 @@ rect_scale = Vector2( 3, 3 )
 text = "10"
 align = 1
 valign = 1
+
+[node name="Spawn1" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.3861 )
+
+[node name="Spawn2" type="Position3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -9.24687 )

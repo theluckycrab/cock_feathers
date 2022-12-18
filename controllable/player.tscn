@@ -18,7 +18,7 @@ shape = SubResource( 1 )
 [node name="Armature" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Armature"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -26,3 +26,6 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.657104, -2.87229e-08 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="Camera" type="Camera" parent="Armature"]
+transform = Transform( 1, 0, 0, 0, 0.827277, 0.561795, 0, -0.561795, 0.827277, 0, 4.0684, 8.33584 )

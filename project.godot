@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Controllable",
+"class": "Arrow",
+"language": "GDScript",
+"path": "res://controllable/arrow.gd"
+}, {
 "base": "KinematicBody",
 "class": "Controllable",
 "language": "GDScript",
 "path": "res://controllable/controllable.gd"
+}, {
+"base": "Controllable",
+"class": "Player",
+"language": "GDScript",
+"path": "res://controllable/player.gd"
 } ]
 _global_script_class_icons={
-"Controllable": ""
+"Arrow": "",
+"Controllable": "",
+"Player": ""
 }
 
 [application]
